@@ -171,29 +171,16 @@ int main()
                 }
             }
 
-            
 
 
-            delay(delayTime);
-    }
-
-    getch();
-    closegraph();
-
-    return 0;
-}
-
-
-
-
- // 2nd obstacle
+            // 2nd obstacle
             if(score>=30){
                 int obstacleX = 200;
                 int obstacleY = 150;
                 int height = 100;
                 int width = 20;
-                setcolor(RED);
-                setfillstyle(SOLID_FILL, RED);
+                setcolor(WHITE);
+                setfillstyle(SOLID_FILL, WHITE);
                 bar(obstacleX, obstacleY, obstacleX + width, obstacleY + height);
 
                 // Collision detection with obstacle
@@ -207,12 +194,13 @@ int main()
 
 
             delay(delayTime);
-    
+    }
 
     getch();
     closegraph();
 
     return 0;
+}
 
 
 
