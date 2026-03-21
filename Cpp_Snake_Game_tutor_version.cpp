@@ -1,7 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <graphics.h>
-#include <time.h>
 #include <conio.h>
+#include <winuser.h>
 using namespace std;
 
 int main()
@@ -70,13 +72,13 @@ int main()
         // Note: We use 'p_dir' (previous direction) to prevent 180-degree turns.
         // You cannot go Left (2) if currently going Right (1), etc.
 
-        if ((GetAsyncKeyState(VK_RIGHT) || GetAsyncKeyState('D')) && p_dir != 2)
+        if ((GetAsyncKeyState('D')) && p_dir != 2)
             key_dir = 1;
-        else if ((GetAsyncKeyState(VK_LEFT) || GetAsyncKeyState('A')) && p_dir != 1)
+        else if ((GetAsyncKeyState('A')) && p_dir != 1)
             key_dir = 2;
-        else if ((GetAsyncKeyState(VK_UP) || GetAsyncKeyState('W')) && p_dir != 4)
+        else if ((GetAsyncKeyState('W')) && p_dir != 4)
             key_dir = 3;
-        else if ((GetAsyncKeyState(VK_DOWN) || GetAsyncKeyState('S')) && p_dir != 3)
+        else if ((GetAsyncKeyState('S')) && p_dir != 3)
             key_dir = 4;
 
         // Update Body Movement according to the direction
@@ -180,3 +182,56 @@ int main()
 
     return 0;
 }
+
+
+
+
+ // 2nd obstacle
+            if(score>=30){
+                int obstacleX = 200;
+                int obstacleY = 150;
+                int height = 100;
+                int width = 20;
+                setcolor(RED);
+                setfillstyle(SOLID_FILL, RED);
+                bar(obstacleX, obstacleY, obstacleX + width, obstacleY + height);
+
+                // Collision detection with obstacle
+                if(snakeX[0] >= obstacleX && snakeX[0] <= obstacleX + width && snakeY[0] >= obstacleY && snakeY[0] <= obstacleY + height){
+                    cout << "Game Over! Snake collided with an obstacle." << endl;
+                    game = false; // Game over if the snake hits the obstacle
+                }
+            }
+
+            
+
+
+            delay(delayTime);
+    
+
+    getch();
+    closegraph();
+
+    return 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
